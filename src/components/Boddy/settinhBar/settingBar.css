@@ -1,0 +1,31 @@
+
+
+.settings_bar{
+    padding: 10px 150px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    justify-content: space-between;
+}
+
+.settings_bar img{
+    height: 30px;
+}
+
+.settings_bar_content{
+    display: flex;
+    flex-direction: row-reverse;  
+}
+
+.settings_bar_content button{
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0px 5px;
+    background-color: transparent;
+    border: none;
+}
+
+.settings_bar_content button:hover{
+    color: #006169;
+}

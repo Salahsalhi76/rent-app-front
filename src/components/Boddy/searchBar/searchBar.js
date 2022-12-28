@@ -8,7 +8,7 @@ import "./searchBar.css";
 
 
 function SearchBar() {
-  const [ baladiyat, setBaladiyat] = useState([]);
+  const [baladiyat, setBaladiyat] = useState([]);
 
 
   const types = ["Terrain", "Terrain Agricole", "Appartement", "Maison", "Bungalow"];
@@ -17,22 +17,23 @@ function SearchBar() {
   return (
     <div className='searchbar'>
 
-      <SearchDropDown items={types} defaultValue="Select type" onChange={() => { }}  />
+
+      <SearchDropDown items={types} defaultValue="Select type" onChange={() => { }} />
       <div class="wrapper">
-  <input type="text" />
-  <FiSearch className='icon' />
-</div>
+        <input type="text" />
+        <FiSearch className='icon' />
+      </div>
 
-<SearchDropDown items={wilayas} defaultValue="Select Wilaya" 
-  onChange={(event) => {
-    const nb = wilayas.indexOf(event.target.value);
+      <SearchDropDown items={wilayas} defaultValue="Select Wilaya"
+        onChange={(event) => {
+          const nb = wilayas.indexOf(event.target.value);
 
-    const filtered = communes.filter(function (element) { return element.wilaya === (nb + 1); })
+          const filtered = communes.filter(function (element) { return element.wilaya === (nb + 1); })
 
-    setBaladiyat(filtered);
-  }} />
+          setBaladiyat(filtered);
+        }} />
 
-      <SearchDropDownCommunes items={baladiyat}   defaultValue="Select commune" onChange={() => { }} />
+      <SearchDropDownCommunes items={baladiyat} defaultValue="Select commune" onChange={() => { }} />
 
 
       <div className='date_picker'>
@@ -60,7 +61,9 @@ function SearchBar() {
 
 export default SearchBar;
 
- 
+
+
+
 var communes = [
   { name: "Adrar", wilaya: 1 },
   { name: "Akabli", wilaya: 1 },
