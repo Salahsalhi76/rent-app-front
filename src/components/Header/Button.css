@@ -1,0 +1,16 @@
+
+.Button{
+border: none;
+color: grey;
+margin-right: 10px;
+font-size: 10px;
+font-weight: 500;
+display: flex;
+justify-items: center;
+justify-content: center;
+align-content: center;
+}
+
+.Button:hover{
+color: green;
+}

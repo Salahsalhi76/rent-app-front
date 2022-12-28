@@ -1,0 +1,16 @@
+.searchdropdown {
+    border-radius: 5px;
+    border: solid;
+    border-width: 0.1px;
+    border-color: #DCDCDC;
+    padding: 0px 5px;
+    margin: 15px 0px;
+    margin-right: 10px;
+    height: 40px;
+}
+
+.searchdropdown option {
+    font-size: 14px;
+    font-weight: 500;
+}
+
