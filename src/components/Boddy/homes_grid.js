@@ -1,6 +1,7 @@
 import React from 'react'
-import "./homes_grid.css";
 import HomeCard from "../home_card/HomeCard.js";
+import "./homes_grid.css";
+
 
 function HomesGrid() {
     const homes = [

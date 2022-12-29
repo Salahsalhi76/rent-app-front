@@ -21,43 +21,44 @@
     margin-top: 10px;
     display: flex;
     flex-direction: column;
+    text-align: start;
 }
 
 
-.price_container{
+.price_containerr{
 display: flex;
 flex-direction: row;
 align-items: baseline;
 }
 
-.price_container h1{
+.price_containerr h1{
     font-size: 25px;
     font-weight: 450;
     margin-right: 3px;
 }
 
-.price_container h2{
+.price_containerr h2{
     font-size: 15px;
     font-weight: 600;
     margin-right: 5px;
 }
 
-.price_container h3{
+.price_containerr h3{
     font-size: 10px;
 }
 
-.properties_container{
+.properties_containerr{
     display: flex;
     flex-direction: row;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
-.property_container{
+.property_containerr{
     display: flex;
     flex-direction: row;
     margin-right: 10px;
 }
-.property_container p{
+.property_containerr p{
     font-size: 14px;
     font-weight: 200;
     margin-left: 5px;

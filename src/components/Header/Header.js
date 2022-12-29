@@ -11,7 +11,7 @@ function Header() {
     <>
       <div className='header'>
 
-        <img src="https://w7.pngwing.com/pngs/332/882/png-transparent-logo-brand-font-product-design-evening-standard-logo-angle-text-logo.png" />
+        <img src="" />
 
         <div className='buttons_container'>
           <Button title="Log  in" icon={<BiUserCircle style={{ alignSelf: "center", "marginRight": '5px', "fontSize": "15px" }} />} />

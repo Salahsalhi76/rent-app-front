@@ -4,6 +4,9 @@ import { FaBath } from 'react-icons/fa';
 import { BiMap, BiBuildingHouse } from 'react-icons/bi';
 import { RxRulerSquare } from 'react-icons/rx';
 import { IoIosArrowForward } from 'react-icons/io';
+import ImageGallery from 'react-image-gallery';
+import "react-image-gallery/styles/css/image-gallery.css";
+
 import "./homeScreen.css";
 
 
@@ -12,7 +15,7 @@ function HomeScreen(props) {
     <div className='homescreen'>
 
       <div className='image_details'>
-        <img src='https://images.bayut.com/thumbnails/286614073-800x600.webp' />
+       <MyGallery />
         <div className='price_container'>
           <h2>USD</h2>
           <h1>{props.price}</h1>
@@ -55,7 +58,7 @@ function HomeScreen(props) {
         </h4>
 
 
-        <h1 style={{ marginTop: '15px', fontSize: "22px", fontWeight: "500",color:"#006169" }}>Property Information</h1>
+        <h1 style={{ marginTop: '15px', fontSize: "22px", fontWeight: "500", color: "#006169" }}>Property Information</h1>
         <div className='properity_information'>
           <h2>Type</h2>
           <h1>Apartment</h1>
@@ -84,8 +87,8 @@ function HomeScreen(props) {
 
       </div>
 
-      <UserInfo />
-      
+      <UserInfo title={props.title} />
+
 
     </div>
   )
@@ -94,7 +97,8 @@ function HomeScreen(props) {
 export default HomeScreen
 
 
-const UserInfo = () => {
+const UserInfo = (props) => {
+
   return (
     <div className='ownerinfo'>
       <div className='owner_card'>
@@ -103,22 +107,54 @@ const UserInfo = () => {
           <h2>Listing by</h2>
           <h2 style={{ color: '#006169', fontWeight: '550' }}>Salah eddine salhi</h2>
 
-          <div style={{display:"flex",flexDirection:"row",marginTop:'5px'}}>
-          <BiBuildingHouse style={{ fontSize: "18px", selfAlign: "center",marginRight:"5px" }} /> 
-            <h2 style={{fontSize:"14px",alignSelf:"center",fontWeight:'550'}}>10</h2>
-            <h2 style={{fontSize:"12px",alignSelf:"center"}}>Listing</h2>
+          <div style={{ display: "flex", flexDirection: "row", marginTop: '5px' }}>
+            <BiBuildingHouse style={{ fontSize: "18px", selfAlign: "center", marginRight: "5px" }} />
+            <h2 style={{ fontSize: "14px", alignSelf: "center", fontWeight: '550' }}>10</h2>
+            <h2 style={{ fontSize: "12px", alignSelf: "center" }}>Listing</h2>
             <h2>.</h2>
             <button>
               <h2>View all</h2>
-              <IoIosArrowForward  />
+              <IoIosArrowForward />
             </button>
           </div>
 
         </div>
+
       </div>
 
-      <h2 style={{fontSize:'13px',fontWeight:"600",alignSelf:"center",marginTop:'20px'}}>Contact Agent for more information.</h2>
-      
+      <h2 style={{ fontSize: '13px', fontWeight: "600", alignSelf: "center", marginTop: '20px' }}>Contact Agent for more information.</h2>
+
+      <textarea type="textarea" placeholder="message" rows={5}   cols={5} aria-label='hhh' value={`I would like to inquire about your property - ${props.title}`} />
+
+      <button className='email_button'>SEND MESSAGE</button>
+
     </div>
   );
+}
+
+
+const images = [
+  {
+    original: 'https://images.bayut.com/thumbnails/295777282-800x600.webp',
+    thumbnail: 'https://images.bayut.com/thumbnails/295777282-800x600.webp',
+  },
+  {
+    original: 'https://images.bayut.com/thumbnails/295777283-800x600.webp',
+    thumbnail: 'https://images.bayut.com/thumbnails/295777283-800x600.webp',
+  },
+  {
+    original: 'https://images.bayut.com/thumbnails/295777285-800x600.webp',
+    thumbnail: "https://images.bayut.com/thumbnails/295777285-800x600.webp",
+  },
+];
+
+class MyGallery extends React.Component {
+  render() {
+    return <ImageGallery items={images} style={{
+      height: "100%",
+      width: "100%",
+      marginBottom: "15px",
+      borderRadius: "10px"
+    }}/>;
+  }
 }

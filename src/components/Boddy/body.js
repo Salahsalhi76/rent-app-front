@@ -1,10 +1,9 @@
 import React from 'react'
-import './body.css';
 import HomesGrid from './homes_grid.js';
 import { MdOutlineVilla } from 'react-icons/md';
 import SearchBar from './searchBar/searchBar';
 import DropDownSalah from '../shared/dropdown';
-import SettingsBar from './settinhBar/settingBar';
+import './body.css';
 
 function Body() {
     const options = [

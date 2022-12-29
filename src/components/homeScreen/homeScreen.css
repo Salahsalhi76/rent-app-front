@@ -26,6 +26,38 @@
     width: 25%;
 }
 
+.ownerinfo textarea{
+    border-radius: 2px;
+    border: solid;
+    border-color: #E0E0E0	;
+    border-width: 0.1px;
+    margin-top: 20px;
+    padding: 5px 5px;
+    text-align: start;
+    width: 100%;
+    font-size: 13px;
+}
+
+
+.email_button{
+    border: none;
+    color: white;
+    background-color: #006169;
+    border-radius: 4px;
+    padding: 0px 25px;
+    margin-top: 30px;
+    font-weight: 600;
+    height: 40px;
+    width: 100%;
+    align-self: center;
+}
+
+.email_button:hover{
+    background-color: #07A7B4;
+
+}
+
+
 
 .price_container {
     display: flex;
@@ -153,3 +185,4 @@ padding: 0;
     font-size: 14px;
     font-weight: 600;
  }
+
