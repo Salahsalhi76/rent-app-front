@@ -8,8 +8,10 @@ function SearchDropDown(props) {
     const value = props.value;
     const defaultValue = props.defaultValue;
 
+    const style = props.width===undefined? {} : {width:"100%"};
+
     return (
-        <select value={value} onChange={props.onChange} className='searchdropdown'>
+        <select value={value} onChange={props.onChange} className='searchdropdown' style={style}>
 
             <option hidden>{defaultValue}</option>
             {

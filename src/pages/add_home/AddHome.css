@@ -1,0 +1,199 @@
+
+
+
+.addhome_appbar{
+    background-color: white;
+    height: 60px;
+    padding: 0px 100px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.addhome_appbar h2{
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 10px;
+    align-content: center;
+}
+
+
+.addhome_appbar button {
+    border: none;
+    color: white;
+    background-color: #006169;
+    border-radius: 4px;
+    padding: 0px 25px;
+    font-weight: 600;
+    height: 40px;
+    align-self: center;
+}
+
+.addhome_appbar button:hover {
+    background-color: #07A7B4;
+
+}
+
+
+.add_home_content{
+    background-color: #F8F8F8;
+    height: 100%;
+    margin: 0px 100px;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+
+.add_home_content h2{
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #006169;
+}
+
+.add_home_content input{
+    padding: 0px 5px;
+    border-width: 0.1px;
+    border: solid  ;
+    border-color: #D0D0D0;
+    height: 30px;
+    width: 95%;
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+
+.add_home_content textarea{
+    padding: 5px;
+    border-width: 0.1px;
+    border: solid  ;
+    border-color: #D0D0D0;
+    width: 95%;
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+ 
+.custom_dropdown {
+    border-radius: 5px;
+    border: solid;
+    border-width: 0.1px;
+    border-color: #DCDCDC;
+    padding: 0px 5px;
+    margin-bottom: 15px;
+    height: 35px;
+    width: 100%;
+}
+
+.custom_dropdown option {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.properties_row{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    justify-content: space-between;
+}
+
+@media (max-width:480px) {
+    
+
+
+.addhome_appbar{
+    background-color: white;
+    height: 50px;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.addhome_appbar h2{
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 10px;
+    align-content: center;
+}
+
+
+.addhome_appbar button {
+    border: none;
+    color: white;
+    background-color: #006169;
+    border-radius: 4px;
+    padding: 0px 25px;
+    font-weight: 600;
+    height: 40px;
+    align-self: center;
+}
+
+.addhome_appbar button:hover {
+    background-color: #07A7B4;
+
+}
+
+
+.add_home_content{
+    background-color: white;
+    height: 100%;
+    margin: 0px;
+    padding: 20px;
+}
+
+
+.add_home_content h2{
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #006169;
+}
+
+.add_home_content input{
+    padding: 0px 5px;
+    border-width: 0.1px;
+    border: solid  ;
+    border-color: #D0D0D0;
+    height: 30px;
+    width: 95%;
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+
+.add_home_content textarea{
+    padding: 5px;
+    border-width: 0.1px;
+    border: solid  ;
+    border-color: #D0D0D0;
+    width: 95%;
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+ 
+.custom_dropdown {
+    border-radius: 5px;
+    border: solid;
+    border-width: 0.1px;
+    border-color: #DCDCDC;
+    padding: 0px 5px;
+    margin-bottom: 15px;
+    height: 35px;
+    width: 100%;
+}
+
+.custom_dropdown option {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.properties_row{
+    display: block;
+    flex-direction: row;
+    width: 95%;
+    justify-content: space-between;
+}
+
+}

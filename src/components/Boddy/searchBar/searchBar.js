@@ -65,7 +65,7 @@ export default SearchBar;
 
 
 
-var communes = [
+const communes = [
   { name: "Adrar", wilaya: 1 },
   { name: "Akabli", wilaya: 1 },
   { name: "Aougrout", wilaya: 1 },
@@ -1559,3 +1559,6 @@ const wilayas = [
   "Ghardaïa",
   "Relizane",
 ];
+
+
+export  {communes,wilayas}

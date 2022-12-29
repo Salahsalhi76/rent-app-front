@@ -19,7 +19,7 @@ function App() {
     setOpen(false);
   };
 
-  if(open) return <AddHomeDialog handleClose={handleClose} />;
+  if(open) return <AddHomeDialog handleClose={handleClose}/>;
 
   return (
     <BrowserRouter>
