@@ -6,6 +6,8 @@
     flex-direction: row;
 }
 
+
+
 .image_details {
     display: flex;
     flex-direction: column;
@@ -186,3 +188,54 @@ padding: 0;
     font-weight: 600;
  }
 
+
+
+ @media (max-width: 480px){ 
+    .homescreen {
+        background-color: white;
+        margin: 0px;
+        padding: 10px 10px;
+        display: flex;
+        flex-direction: column;
+    } 
+
+    .image_details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+
+    .ownerinfo {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .properties_container{
+        display: flex;
+        flex-direction: row;
+        margin-top: 18px;
+        justify-content: space-around;
+    }
+    
+    .properity_information{
+        display: bloc;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 10px;
+    }
+    .properity_information h2{
+        font-size: 14px;
+        font-weight: 400;
+        width: 25%;
+        margin: 0px 10px;
+    }
+    .properity_information h1{
+        font-size: 15px;
+        font-weight: 600;
+        width: 25%;
+        margin: 0;
+    }
+    
+}

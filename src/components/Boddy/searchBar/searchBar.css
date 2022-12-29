@@ -56,13 +56,14 @@
     font-weight: 400;
 }
 
-.baths_beds{
+.baths_beds {
     display: flex;
     flex-direction: row;
     align-items: center;
     max-width: 100%;
 }
-.baths_beds input{
+
+.baths_beds input {
     width: 60px;
     margin-left: 5px;
 }
@@ -73,7 +74,9 @@
     font-weight: 400;
 }
 
-.searchbar button{
+
+
+.searchbar button {
     border: none;
     color: white;
     background-color: #006169;
@@ -84,8 +87,74 @@
     align-self: center;
 }
 
-.searchbar button:hover{
+.searchbar button:hover {
     background-color: #07A7B4;
 
 }
 
+@media (max-width:480px) {
+    .searchbar {
+        width: max-content;
+        display: block;
+        flex-direction: row;
+    }
+    
+    .wrapper {
+        /* position:relative;*/
+        align-items: center;
+        display: flex;
+        width: min-content;
+        margin: 0;
+    }
+    
+    .icon {
+        font-size: 25px;
+        background-color: white;
+        align-content: center;
+        color: grey;
+        transform: translateX(-170%);
+
+    }
+    
+    .searchbar input {
+        border-radius: 5px;
+        border: solid;
+        border-width: 0.1px;
+        border-color: #DCDCDC;
+        padding: 0px 5px;
+        margin: 15px 0px;
+        margin-right: 10px;
+        height: 40px;
+        width: 200px;
+    }
+    
+    .date_picker {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 200px;
+    }
+    
+    
+    .date_picker h2 {
+        margin-left: 10px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    .baths_beds {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        max-width: min-content;
+    }
+    
+
+    .baths_beds input {
+        width: 60px;
+        margin-left: 10px;
+    }
+    
+    
+  
+}

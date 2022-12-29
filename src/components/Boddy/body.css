@@ -2,7 +2,7 @@
 width: 100%;
 height: 1px;
 background-color: #E8E8E8;
-margin: 0.1px 0px;
+margin: 10px 0px;
 }
 
 .body{
@@ -22,6 +22,7 @@ margin: 0.1px 0px;
 .body_content ul{
     padding: 0;
 }
+
 
 .body_right_space{
     width: 100%;
@@ -58,7 +59,7 @@ margin: 0.1px 0px;
 }
 
 .furnish_type{
-    display: flex;
+    display: block;
     flex-direction: row;
     align-items: center;
 
@@ -72,7 +73,7 @@ margin: 0.1px 0px;
 
 .furnish_type_buttons_container{
     height: 25px;
-    display: flex;
+    display: block;
     flex-direction: row;
     border-radius: 5px;
     border: solid;
@@ -124,7 +125,12 @@ margin: 0.1px 0px;
     font-weight: 400;
     margin-right: 10px;
 }
-
+.body_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .add_home_button{
     width: 100%;
@@ -156,24 +162,174 @@ margin: 0.1px 0px;
 }
 
 
-@media (max-width:992px) {
-
-}
-
-@media (max-width:768px) {
-
+@media (max-width:480px) {
+   
+        
     .body{
-        padding: 5px 20px;
+        padding: 10px 10px;
         height: 100%;
         background-color: white;
         display: flex;
         flex-direction: column;
     }
-
+        
+    .body_header h1{
+        font-size: 18px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+    }
+    
     .body_content{
         display: flex;
         flex-direction: column;
+        width: 100%;
         align-items: center;
+    }
+
+    .body_header{
+        display: block;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .body_content ul{
+        padding: 0;
+    }
+  
+    .body_right_space{
+        width: 280px;
+        height: 150px;
+        margin-left: 15px;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 100px;
+        background-color: transparent;
+    }
+    .body_right_space img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .body_right_space h1{
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+    
+    .body_right_space h2{
+        font-size: 12px;
+        margin: 10px;
+        color: grey;
+    }
+    
+    
+
+    .furnish_type{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+    }
+    
+    .furnish_type h1{
+        font-size: 12px;
+        font-weight: 400;
+        margin-right: 10px;
+    }
+    
+    .furnish_type_buttons_container{
+        height: 25px;
+        display: flex;
+        flex-direction: row;
+        border-radius: 5px;
+        border: solid;
+        border-width: 0.1px;
+        border-color: #DCDCDC;
+        padding: 2px 3px;
+        margin: 15px 0px;
+    }
+    
+    .furnish_type_buttons_container button{
+        font-size: 14px;
+        margin: 0px 2px;
+        padding: 3px 10px;
+        border: none;
+        background-color: transparent;
+        border-radius: 5px;
+    }
+    
+    .furnish_type_buttons_container button:hover{
+        background-color: #d9f1e5;
+        color: #2db371;
+    }
+    
+    
+    .homes_body_container{
+        width: 100%;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 1fr ;
+    }
+    
+    
+    
+    .body_min_header{
+        display: block;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .order_by_container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .order_by_container h1{
+        font-size: 12px;
+        font-weight: 400;
+        margin-right: 10px;
+    }
+    
+    
+    .add_home_button{
+        width: 100%;
+        border: solid;
+        border-width: 0.1px;
+        border-color: #006169;
+        margin-top: 20px;
+        color: #006169;
+        border-radius: 4px;
+        background-color: transparent;
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+        padding: 8px 0px;
+    }
+    
+    .add_home_button h2{
+        font-size: 15px;
+        font-weight: 550;
+        color:#006169;
+        margin: 0;
         align-self: center;
     }
+    
+    .add_home_button:hover{
+        width: 100%;
+        background-color: #e5eff0;
+    
+    }
+    
+    
+
 }
+
+
+

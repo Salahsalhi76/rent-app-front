@@ -155,7 +155,7 @@ function HomesGrid() {
 
     ];
   return (
-    <div className='homes_body_container'>
+    <div className='homes_grid'>
     {homes.map((data) => (
         <HomeCard
             key={data.price}

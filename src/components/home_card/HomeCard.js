@@ -15,7 +15,7 @@ function HomeCard(props) {
 
     return (
         <button  onClick={routeChange} style={{backgroundColor:'transparent',border:"none"}} alt="dsgsdgg">
-              <div className='homecard' alt="fdgdfgjh">
+              <div className='homecard'>
             <img src={props.image} />
             <div className='content'>
                 <div className='price_containerr'>

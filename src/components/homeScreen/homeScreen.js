@@ -154,7 +154,7 @@ class MyGallery extends React.Component {
       height: "100%",
       width: "100%",
       marginBottom: "15px",
-      borderRadius: "10px"
+      borderRadius: "10px",
     }}/>;
   }
 }

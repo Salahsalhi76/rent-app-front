@@ -19,6 +19,7 @@ function SearchBar() {
 
 
       <SearchDropDown items={types} defaultValue="Select type" onChange={() => { }} />
+      
       <div class="wrapper">
         <input type="text" />
         <FiSearch className='icon' />
@@ -42,15 +43,15 @@ function SearchBar() {
       </div>
 
 
+        <div className='baths_beds'>
+         <h2>Baths</h2>
+         <input type='number' />
+        </div>
 
-      <div className='baths_beds'>
-        <h2>Baths</h2>
-        <input type='number' />
-      </div>
-      <div className='baths_beds'>
-        <h2>Beds</h2>
-        <input type="number" />
-      </div>
+        <div className='baths_beds'>
+         <h2>Beds</h2>
+         <input type="number" />
+        </div>
 
       <button >Search</button>
 

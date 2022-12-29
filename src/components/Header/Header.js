@@ -1,9 +1,9 @@
 import React from 'react'
-import './Header.css';
-import Button from "./Button.js";
 import { MdFavoriteBorder } from "react-icons/md";
 import { BiUserCircle } from "react-icons/bi";
+import { GiAlgeria } from "react-icons/gi";
 import SettingsBar from '../Boddy/settinhBar/settingBar';
+import './Header.css';
 
 
 function Header() {
@@ -11,7 +11,10 @@ function Header() {
     <>
       <div className='header'>
 
-        <img src="" />
+        <div style={{display:"flex",flexDirection:"row",alignItems:"center"}}>
+        <GiAlgeria style={{color:"#006169",marginLeft:'10px',marginRight:'5px'}}/>
+        <h2 style={{fontSize:"15px",color:"#006169"}}>Algeria</h2>
+        </div>
 
         <div className='buttons_container'>
           <Button title="Log  in" icon={<BiUserCircle style={{ alignSelf: "center", "marginRight": '5px', "fontSize": "15px" }} />} />
@@ -30,4 +33,14 @@ function Header() {
   )
 }
 
-export default Header
+export default Header;
+
+
+function Button(props) {
+  return (
+    <button className='Button'>
+        {props.icon}
+        <h2>{props.title}</h2>
+    </button>
+  )
+}

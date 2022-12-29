@@ -1,5 +1,6 @@
 
-.homes_body_container{
+
+.homes_grid{
     width: 100%;
     margin: 0;
     display: grid;
@@ -9,22 +10,14 @@
 
 
 
-@media (max-width:992px) {
-    .homes_body_container{
-        width: 100%;
+@media (max-width:480px) {
+    .homes_grid {
         margin: 0;
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: 1fr ;
-    }  
-}
-
-@media (max-width:768px) {
-    .homes_body_container{
-        width: 100%;
-        margin: 0;
-        display: grid;
-        grid-template-columns: repeat(1,1fr);
-        grid-template-rows: 1fr ;
-    }   
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    
+    
 }
