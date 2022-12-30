@@ -1561,4 +1561,4 @@ const wilayas = [
 ];
 
 
-export  {communes,wilayas}
+export   {communes,wilayas}

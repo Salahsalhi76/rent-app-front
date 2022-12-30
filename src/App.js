@@ -15,9 +15,9 @@ function App() {
   };
 
   const handleClose = () => {
-    console.log("handleClosehandleClosehandleClosehandleClosehandleClosehandleClosehandleClosehandleClosehandleClose");
     setOpen(false);
   };
+
 
   if(open) return <AddHomeDialog handleClose={handleClose}/>;
 
