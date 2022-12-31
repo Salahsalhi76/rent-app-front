@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import HomeScreen from "./components/homeScreen/homeScreen.js";
 import AddHomeDialog from "./pages/add_home/AddHome.js";
 import React from "react";
-import MessagesDialog from "./components/messages/Dropdown/DropdownMenu.jsx";
+import {MessagesDialog} from "./components/messages/Dropdown/DropdownMenu.jsx";
 
 function App() {
 

@@ -16,10 +16,15 @@ function SettingsBar() {
 
             <div className='settings_bar_content'>
                 <li className="nav-item">
-                    <button onClick={() =>{
-                        navigate('/messages');
+                    <button onClick={() => {
+                        if (open) {
+                            navigate('/');
+                        } else {
+                            navigate('/messages');
+                        }
+                        setOpen(!open);
                     }}>My messages</button>
-                    
+
                 </li>
 
                 <button>My offers</button>

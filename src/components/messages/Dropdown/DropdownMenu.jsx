@@ -4,7 +4,7 @@ import {  useNavigate } from "react-router-dom";
 import "./DropdownMenu.css";
 
 
-export const MessagesDialog = () => {
+const   MessagesDialog = () => {
   let navigate = useNavigate();
 
   return (
@@ -20,9 +20,9 @@ export const MessagesDialog = () => {
         left: '0px',
         bottom: "0px",
         position: 'fixed',
-        backgroundColor: "red",
+        backgroundColor: "transparent",
       }}>
-        sfgdsjhhxnvk;s
+        <DropdownMenu />
     </div>
   );
 }
@@ -65,4 +65,5 @@ mounted to DOM
   );
 };
 
-export default DropdownMenu;
+ 
+export {MessagesDialog}
