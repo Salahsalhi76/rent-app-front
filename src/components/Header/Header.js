@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { MdFavoriteBorder } from "react-icons/md";
 import { BiUserCircle } from "react-icons/bi";
 import { GiAlgeria } from "react-icons/gi";

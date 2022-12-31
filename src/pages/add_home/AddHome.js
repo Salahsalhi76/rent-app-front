@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react';
+import  { forwardRef, useState } from 'react';
 import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 import { AiOutlineArrowLeft } from "react-icons/ai";

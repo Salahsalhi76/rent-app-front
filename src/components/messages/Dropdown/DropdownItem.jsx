@@ -1,4 +1,3 @@
-import React from "react";
 import "./DropdownItem.css";
 
 const DropdownItem = (props) => {

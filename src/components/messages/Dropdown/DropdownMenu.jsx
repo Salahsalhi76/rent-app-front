@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import DropdownItem from "./DropdownItem";
-import {  useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import "./DropdownMenu.css";
 
 
@@ -10,9 +10,9 @@ const   MessagesDialog = () => {
   return (
     <div
       onClick={() => {
-        navigate("/");
+         navigate("/");
       }}
-      style={{
+       style={{
         height: "100%",
         width: "100%",
         top: '0px',

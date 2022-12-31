@@ -1,5 +1,4 @@
-import React from 'react'
-import HomesGrid from './homes_grid.js';
+   import HomesGrid from './homes_grid.js';
 import { MdOutlineVilla } from 'react-icons/md';
 import SearchBar from './searchBar/searchBar';
 import DropDownSalah from '../shared/dropdown';

@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaBed } from 'react-icons/fa';
 import { FaBath } from 'react-icons/fa';
 import { RxRulerSquare } from 'react-icons/rx';

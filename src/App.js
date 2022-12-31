@@ -3,9 +3,8 @@ import Body from "./components/Boddy/body.js";
 import "./app.css";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import HomeScreen from "./components/homeScreen/homeScreen.js";
-import AddHomeDialog from "./pages/add_home/AddHome.js";
-import React from "react";
 import {MessagesDialog} from "./components/messages/Dropdown/DropdownMenu.jsx";
+import AddHomeDialog from "./pages/add_home/AddHome.js";
 
 function App() {
 
@@ -14,10 +13,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="app">
+       <div className="app">
         <Header />
-        <Routes>
-          <Route path="/" element={<Body />}>
+         <Routes>
+           <Route path="/" element={<Body />}>
               <Route path="/messages" element={<MessagesDialog />} />
           </Route>
           <Route path="/addHome" element={<AddHomeDialog />} />
