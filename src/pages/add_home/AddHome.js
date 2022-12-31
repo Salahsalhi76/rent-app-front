@@ -5,6 +5,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdHomeWork } from "react-icons/md";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 
 import './AddHome.css';
@@ -16,9 +17,13 @@ const Transition = forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function AddHomeDialog(props) {
+export default function AddHomeDialog() {
     const [baladiyat, setBaladiyat] = useState([]);
+    let navigate = useNavigate(); 
 
+    const handleClose = ()=>{
+        navigate(-1);
+    }
 
 
     const types = ["Terrain", "Terrain Agricole", "Appartement", "Maison", "Bungalow"];
@@ -28,15 +33,15 @@ export default function AddHomeDialog(props) {
         <Dialog
             fullScreen
             open={true}
-            onClose={props.handleClose}
+            onClose={handleClose}
             TransitionComponent={Transition}>
 
             <div style={{ backgroundColor: "white" }}>
-                <CustomAppBar onClose={props.handleClose} />
+                <CustomAppBar onClose={handleClose} />
                 <div className='add_home_content'>
 
                     <div style={{ display: "flex", alignItems: "center", margin: "15px 0px" }}>
-                        <MdHomeWork style={{ fontSize: "22px", color: '#006169' }} onClick={props.onClose} />
+                        <MdHomeWork style={{ fontSize: "22px", color: '#006169' }}   />
                         <h3 style={{ fontSize: "15px", marginLeft: "10px" }}>Caractéristique de l'annonce</h3>
                     </div>
 
@@ -48,31 +53,31 @@ export default function AddHomeDialog(props) {
                     <textarea rows={10} />
 
                     <div className='properties_row'>
-                        <div style={{ display: "flex", "flexDirection": "column", width: "100%" ,marginRight:'10px'}}>
+                        <div style={{ display: "flex", "flexDirection": "column", width: "100%", marginRight: '10px' }}>
                             <h2> La catégorie du bien</h2>
                             <CustomDropDown items={categories} defaultValue="Sélectionner La catégorie" onChange={() => { }} />
 
                         </div>
-                        
-                        <div style={{ display: "flex", "flexDirection": "column", width: "100%",marginRight:'10px' }}>
+
+                        <div style={{ display: "flex", "flexDirection": "column", width: "100%", marginRight: '10px' }}>
                             <h2> Le type du bien</h2>
                             <CustomDropDown items={types} defaultValue="Sélectionner Le type" onChange={() => { }} />
 
                         </div>
 
-                        <div style={{ display: "flex", "flexDirection": "column", width: "100%",marginRight:'10px' }}>
+                        <div style={{ display: "flex", "flexDirection": "column", width: "100%", marginRight: '10px' }}>
                             <h2>Lits</h2>
                             <input type='number' />
                         </div>
 
-                        <div style={{ display: "flex", "flexDirection": "column", width: "100%",marginRight:'10px' }}>
+                        <div style={{ display: "flex", "flexDirection": "column", width: "100%", marginRight: '10px' }}>
                             <h2>Beds</h2>
-                            <input type="number"/>
+                            <input type="number" />
                         </div>
 
-                        <div style={{ display: "flex", "flexDirection": "column", width: "100%", marginRight:'10px' }}>
+                        <div style={{ display: "flex", "flexDirection": "column", width: "100%", marginRight: '10px' }}>
                             <h2>Surface </h2>
-                            <input type="number"  placeholder="m2" />
+                            <input type="number" placeholder="m2" />
                         </div>
 
                     </div>
@@ -83,7 +88,7 @@ export default function AddHomeDialog(props) {
 
 
                     <div style={{ display: "flex", alignItems: "center", margin: "15px 0px" }}>
-                        <FaMapMarkerAlt style={{ fontSize: "22px", color: '#006169' }} onClick={props.onClose} />
+                        <FaMapMarkerAlt style={{ fontSize: "22px", color: '#006169' }}  />
                         <h3 style={{ fontSize: "15px", marginLeft: "10px" }}>Adresse du bien * (obligatoire)</h3>
                     </div>
 
@@ -113,7 +118,7 @@ export default function AddHomeDialog(props) {
 
 
                     <div style={{ display: "flex", alignItems: "center", margin: "15px 0px" }}>
-                        <BsFillPersonLinesFill style={{ fontSize: "22px", color: '#006169' }} onClick={props.onClose} />
+                        <BsFillPersonLinesFill style={{ fontSize: "22px", color: '#006169' }}  />
                         <h3 style={{ fontSize: "15px", marginLeft: "10px" }}>Les informations de contact</h3>
                     </div>
 
@@ -128,10 +133,10 @@ export default function AddHomeDialog(props) {
                     <div className='properties_row'>
                         <div style={{ display: "flex", "flexDirection": "column", width: "100%", marginRight: '10px' }}>
                             <h2>Email</h2>
-                            <input type="email" style={{ width: '97%',marginRight:'10px' }} />
+                            <input type="email" style={{ width: '97%', marginRight: '10px' }} />
                         </div>
 
-                        <div style={{ display: "flex", "flexDirection": "column", width: "100%"}}>
+                        <div style={{ display: "flex", "flexDirection": "column", width: "100%" }}>
                             <h2>N° Téléphone</h2>
                             <input type="phone" style={{ width: '100%' }} />
 
@@ -152,7 +157,7 @@ export default function AddHomeDialog(props) {
 const CustomAppBar = (props) => {
     return <div className='addhome_appbar'>
         <div style={{ display: "flex", alignItems: "center" }}>
-            <AiOutlineArrowLeft style={{ fontWeight: "bold", fontSize: "20px" }} onClick={props.onClose} />
+            <AiOutlineArrowLeft style={{ fontWeight: "bold", fontSize: "20px" }}  onClick={props.onClose} />
             <h2>Créer une annonce</h2>
         </div>
 

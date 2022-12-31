@@ -1,0 +1,21 @@
+.menu-item {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: var(--border-radius);
+  transition: background 200;
+  padding: 0.5rem; /* 0.5rem */
+}
+
+.menu-item:hover {
+  background-color: 	rgba(245,245,245,1);
+  border-radius: 10px;
+}
+
+.menu-item img {
+  height: 100%;
+  clip-path: circle();
+  margin-right: 10px;
+}
+

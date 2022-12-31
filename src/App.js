@@ -1,32 +1,27 @@
 import Header from "./components/Header/Header.js";
 import Body from "./components/Boddy/body.js";
 import "./app.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import HomeScreen from "./components/homeScreen/homeScreen.js";
 import AddHomeDialog from "./pages/add_home/AddHome.js";
-import React,{useState} from "react";
+import React from "react";
+import MessagesDialog from "./components/messages/Dropdown/DropdownMenu.jsx";
 
 function App() {
 
-  const [open, setOpen] = useState(false);
 
-  const handleAddHome = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-
-  if(open) return <AddHomeDialog handleClose={handleClose}/>;
+  
 
   return (
     <BrowserRouter>
       <div className="app">
         <Header />
         <Routes>
-          <Route path="/" element={<Body onAddHome={handleAddHome}/>} />
+          <Route path="/" element={<Body />}>
+              <Route path="/messages" element={<MessagesDialog />} />
+          </Route>
+          <Route path="/addHome" element={<AddHomeDialog />} />
+
           <Route path="/home" element={
             <HomeScreen
               price="2500,00"
