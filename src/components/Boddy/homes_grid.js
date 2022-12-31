@@ -1,4 +1,3 @@
-import React from 'react'
 import HomeCard from "../home_card/HomeCard.js";
 import "./homes_grid.css";
 
