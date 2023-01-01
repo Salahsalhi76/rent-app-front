@@ -37,10 +37,10 @@
     justify-content: center;
     align-items: center;
     transition: all;
-  }
-  
-  /* Icon Button */
-  .icon-button {
+}
+
+/* Icon Button */
+.icon-button {
     --button--size: calc(var(--nav-size) * 0.5);
     width: var(--button--size);
     height: var(--button--size);
@@ -52,18 +52,18 @@
     align-items: center;
     justify-content: center;
     transition: filter 0.2s;
-  }
-  
-  .icon-button:hover {
+}
+
+.icon-button:hover {
     filter: brightness(1.2);
-  }
-  
-  .icon-button svg {
+}
+
+.icon-button svg {
     fill: var(--text-color);
     width: 20px;
     height: 20px;
-  }
-  
+}
+
 
 @media (max-width: 480px) {
     .settings_bar {
@@ -84,6 +84,8 @@
         flex-direction: row;
     }
 
-   
 
+    .settings_bar_content button {
+        margin-top: 5px;
+    }
 }

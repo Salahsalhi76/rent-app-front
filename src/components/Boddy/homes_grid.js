@@ -1,8 +1,11 @@
 import HomeCard from "../home_card/HomeCard.js";
+import LoadingWidget from "../loading/loading.js";
 import "./homes_grid.css";
 
 
-function HomesGrid() {
+function HomesGrid(props) {
+
+
     const homes = [
         {
             price: "546",
@@ -153,24 +156,27 @@ function HomesGrid() {
         },
 
     ];
-  return (
-    <div className='homes_grid'>
-    {homes.map((data) => (
-        <HomeCard
-            key={data.price}
-            price={data.price}
-            adresse={data.adresse}
-            title={data.title}
-            description={data.description}
-            nb_bed={data.nb_bed}
-            nb_bath={data.nb_bath}
-            sqft={data.sqft}
-            type={data.type}
-            image={data.image}
-        />
-    ))}
-</div>
-  )
+    return (
+        <div className='homes_grid'>
+     
+
+            {homes?.map((data) => (
+                <HomeCard
+                    key={data.price}
+                    price={data.price}
+                    adresse={data.adresse}
+                    title={data.title}
+                    description={data.description}
+                    nb_bed={data.nb_bed}
+                    nb_bath={data.nb_bath}
+                    sqft={data.sqft}
+                    type={data.type}
+                    image={data.image}
+
+                />
+            ))}
+        </div>
+    )
 }
 
 export default HomesGrid

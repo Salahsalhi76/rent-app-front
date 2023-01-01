@@ -3,21 +3,39 @@ import Body from "./components/Boddy/body.js";
 import "./app.css";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import HomeScreen from "./components/homeScreen/homeScreen.js";
-import {MessagesDialog} from "./components/messages/Dropdown/DropdownMenu.jsx";
+import { MessagesDialog } from "./components/messages/Dropdown/DropdownMenu.jsx";
 import AddHomeDialog from "./pages/add_home/AddHome.js";
+import ChatPopUp from './chat/chat-popup.js';
+import { useState,useEffect } from "react";
+import getHomes from "./fonctions/functions.js";
 
 function App() {
 
+  let [open, setOpen] = useState(false);
+  let [homes,setHomes] = useState([]);
+  let [state,setState] = useState(0); // 0 loading 1 stable -1 error
 
-  
+
+  useEffect(()=>{
+     getHomes().then(data=>{
+      setHomes(data);
+      setState(1);
+    });
+   
+  },[]);
+
+
 
   return (
     <BrowserRouter>
-       <div className="app">
+      <div className="app" >
+        <ChatPopUp isOpen={open} onClose={() => { setOpen(false); }} />
+
         <Header />
-         <Routes>
-           <Route path="/" element={<Body />}>
-              <Route path="/messages" element={<MessagesDialog />} />
+        <Routes>
+          <Route path="/" element={<Body homes={homes} state={state}/>}>
+            <Route path="/messages" element={<MessagesDialog onClick={() => { setOpen(true); }} />} />
+
           </Route>
           <Route path="/addHome" element={<AddHomeDialog />} />
 
@@ -33,7 +51,10 @@ function App() {
               type="Appartement"
               image="https://images.bayut.com/thumbnails/318776129-800x600.webp"
             />
-          } />
+          } >
+            <Route path="/home/messages" element={<MessagesDialog onClick={() => { setOpen(true); }} />} />
+
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>

@@ -1,16 +1,19 @@
 import  { useState } from "react";
 import DropdownItem from "./DropdownItem";
-import {useNavigate } from "react-router-dom";
+import { useNavigate,useLocation  } from "react-router-dom";
 import "./DropdownMenu.css";
 
 
-const   MessagesDialog = () => {
+const   MessagesDialog = (props) => {
   let navigate = useNavigate();
+  let location = useLocation();
 
   return (
     <div
       onClick={() => {
-         navigate("/");
+        const tmp = location.pathname;
+        const path =  tmp==="/messages"? "/" : "/home/";
+         navigate(path);
       }}
        style={{
         height: "100%",
@@ -22,13 +25,13 @@ const   MessagesDialog = () => {
         position: 'fixed',
         backgroundColor: "transparent",
       }}>
-        <DropdownMenu />
+        <DropdownMenu onClick={props.onClick}/>
     </div>
   );
 }
 
 
-const DropdownMenu = () => {
+const DropdownMenu = (props) => {
   // state for csstransition
   const [menuHeight, setMenuHeight] = useState(null);
 
@@ -48,17 +51,14 @@ mounted to DOM
     <div className="dropdown"  >
 
       <div className="menu" style={{ "overflow-y": "scroll", maxHeight: "100%", height: "100%" }}>
-        <DropdownItem>Salah eddine</DropdownItem>
-        <DropdownItem>Mouadh baghdadi</DropdownItem>
-        <DropdownItem>Mouadh baghdadi</DropdownItem>
-        <DropdownItem>Mouadh baghdadi</DropdownItem>
-        <DropdownItem>Mouadh baghdadi</DropdownItem>
-        <DropdownItem>Mouadh baghdadi</DropdownItem>
-        <DropdownItem>Mouadh baghdadi</DropdownItem>
-        <DropdownItem>Mouadh baghdadi</DropdownItem>
-        <DropdownItem>Mouadh baghdadi</DropdownItem>
-        <DropdownItem>Mouadh baghdadi</DropdownItem>
-        <DropdownItem>Hamdi</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>v
+     
       </div>
 
     </div >

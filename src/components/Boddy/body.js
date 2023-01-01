@@ -1,17 +1,18 @@
-   import HomesGrid from './homes_grid.js';
+import HomesGrid from './homes_grid.js';
 import { MdOutlineVilla } from 'react-icons/md';
 import SearchBar from './searchBar/searchBar';
 import DropDownSalah from '../shared/dropdown';
 import { useNavigate, Outlet } from "react-router-dom";
 import './body.css';
+import LoadingWidget from '../loading/loading.js';
 
-function Body() {
+function Body(props) {
+    console.log(`body props.homes=> ${props.homes}`);
     const options = [
         'Popular', 'Newest', 'Old'
     ];
     const defaultOption = options[0];
     const value = options[0];
-
 
 
     return (
@@ -22,9 +23,9 @@ function Body() {
                 <div className='divider' />
 
 
-
                 <div className='body_content'>
 
+                    
                     <div style={{ display: "flex", flexDirection: "column" }}>
                         <div className='body_header'>
                             <h1>Properties for rent in Algeria</h1>
@@ -33,8 +34,9 @@ function Body() {
                                 <DropDownSalah items={options} value={value} defaultValue={defaultOption} />
                             </div>
                         </div>
+                        
 
-                        <HomesGrid />
+                        <HomesGrid homes={props.homes} />
                     </div>
 
                     <RightSpace />

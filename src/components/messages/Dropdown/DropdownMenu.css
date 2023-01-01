@@ -50,7 +50,7 @@
   .dropdown {
     position: absolute;
     align-self: center;
-    top: 100px;
+    top: 120px;
     right: 10px;
     left: 10px;
     background-color: var(--bg);
