@@ -9,6 +9,23 @@ import "./searchBar.css";
 
 function SearchBar() {
   const [baladiyat, setBaladiyat] = useState([]);
+  const [type, setType] = useState();
+  const [text, setText] = useState();
+  const [wilaya, SetWilaya] = useState();
+  const [baladiya, setBaladiya] = useState();
+  const [maxdate, setMaxDate] = useState();
+  const [baths, setBaths] = useState();
+  const [beds, setBeds] = useState();
+
+  function search() {
+    console.log(type);
+    console.log(text);
+    console.log(wilaya);
+    console.log(baladiya);
+    console.log(maxdate);
+    console.log(baths);
+    console.log(beds);
+  }
 
 
   const types = ["Terrain", "Terrain Agricole", "Appartement", "Maison", "Bungalow"];
@@ -18,42 +35,55 @@ function SearchBar() {
     <div className='searchbar'>
 
 
-      <SearchDropDown items={types} defaultValue="Select type" onChange={() => { }} />
-      
+      <SearchDropDown items={types} defaultValue="Select type" onChange={(event) => {
+          setType(event.target.value);
+        }} />
+
       <div class="wrapper">
-        <input type="text" />
+        <input type="text"  onChange={(event) => {
+          setText(event.target.value);
+        }}/>
         <FiSearch className='icon' />
       </div>
 
       <SearchDropDown items={wilayas} defaultValue="Select Wilaya"
         onChange={(event) => {
           const nb = wilayas.indexOf(event.target.value);
+          SetWilaya(event.target.value);
 
           const filtered = communes.filter(function (element) { return element.wilaya === (nb + 1); })
 
           setBaladiyat(filtered);
         }} />
 
-      <SearchDropDownCommunes items={baladiyat} defaultValue="Select commune" onChange={() => { }} />
+      <SearchDropDownCommunes items={baladiyat} defaultValue="Select commune" onChange={(event) => {
+        setBaladiya(event.target.value);
+      }} />
 
 
       <div className='date_picker'>
         <h2>Max date</h2>
-        <input type="date" />
+        <input type="date" onChange={(event) => {
+          setMaxDate(event.target.value);
+        }} />
       </div>
 
 
-        <div className='baths_beds'>
-         <h2>Baths</h2>
-         <input type='number' />
-        </div>
+      <div className='baths_beds'>
+        <h2>Baths</h2>
+        <input type='number' onChange={(event) => {
+          setBaths(event.target.value);
+        }} />
+      </div>
 
-        <div className='baths_beds'>
-         <h2>Beds</h2>
-         <input type="number" />
-        </div>
+      <div className='baths_beds'>
+        <h2>Beds</h2>
+        <input type="number" onChange={(event) => {
+          setBeds(event.target.value);
+        }} />
+      </div>
 
-      <button >Search</button>
+      <button onClick={search}>Search</button>
 
     </div>
 
@@ -1561,4 +1591,4 @@ const wilayas = [
 ];
 
 
-export   {communes,wilayas}
+export { communes, wilayas }

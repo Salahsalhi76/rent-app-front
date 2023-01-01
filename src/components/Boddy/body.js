@@ -3,8 +3,9 @@ import { MdOutlineVilla } from 'react-icons/md';
 import SearchBar from './searchBar/searchBar';
 import DropDownSalah from '../shared/dropdown';
 import { useNavigate, Outlet } from "react-router-dom";
-import './body.css';
 import LoadingWidget from '../loading/loading.js';
+import './body.css';
+
 
 function Body(props) {
     console.log(`body props.homes=> ${props.homes}`);
@@ -26,7 +27,7 @@ function Body(props) {
                 <div className='body_content'>
 
                     
-                    <div style={{ display: "flex", flexDirection: "column" }}>
+                    <div className='homes_body'>
                         <div className='body_header'>
                             <h1>Properties for rent in Algeria</h1>
                             <div className='order_by_container'>
@@ -35,8 +36,11 @@ function Body(props) {
                             </div>
                         </div>
                         
-
+                        { props.loading && <LoadingWidget/>}
                         <HomesGrid homes={props.homes} />
+
+
+
                     </div>
 
                     <RightSpace />
