@@ -5,10 +5,15 @@
     align-items: center;
     width: 280px;
     align-self: center;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 10px;
+    background-color: white;
 }
 
+.homecard:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
 .homecard img{
     height: 150px;
     width: 100%;

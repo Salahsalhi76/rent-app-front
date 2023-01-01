@@ -16,6 +16,7 @@ function SearchBar() {
   const [maxdate, setMaxDate] = useState();
   const [baths, setBaths] = useState();
   const [beds, setBeds] = useState();
+  const [sqft, setSqfts] = useState();
 
   function search() {
     console.log(type);
@@ -25,6 +26,8 @@ function SearchBar() {
     console.log(maxdate);
     console.log(baths);
     console.log(beds);
+    console.log(sqft);
+
   }
 
 

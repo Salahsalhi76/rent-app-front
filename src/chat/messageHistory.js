@@ -1,6 +1,6 @@
 
 export default [
-  {type: 'text', author: 'me', data: { text: "Why don't they have salsa on the table?"} },
+
   {type: 'text', author: 'them', data: { text: 'What do you need salsa for?'} },
   {type: 'text', author: 'me', data: { text: 'Salsa is now the number one condiment in America.'} },
   {type: 'text', author: 'them', data: { text: "You know why? Because people like to say 'salsa.' 'Excuse me, do you have salsa?' 'We need more salsa.' 'Where is the salsa? No salsa?'"} },

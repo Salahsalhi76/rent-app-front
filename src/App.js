@@ -8,6 +8,7 @@ import AddHomeDialog from "./pages/add_home/AddHome.js";
 import ChatPopUp from './chat/chat-popup.js';
 import { useState,useEffect } from "react";
 import getHomes from "./fonctions/functions.js";
+import LoginPage from "./pages/login/LoginPage.js";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
 
 
 
+  return <LoginPage />;
   return (
     <BrowserRouter>
       <div className="app" >
