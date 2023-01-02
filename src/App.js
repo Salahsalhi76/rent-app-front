@@ -17,6 +17,7 @@ function App() {
   let [state,setState] = useState(0); // 0 loading 1 stable -1 error
 
 
+  /*
   useEffect(()=>{
      getHomes().then(data=>{
       setHomes(data);
@@ -24,6 +25,7 @@ function App() {
     });
    
   },[]);
+  */
 
 
 
