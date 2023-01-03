@@ -1,7 +1,7 @@
 .settings_bar {
-    padding: 10px 150px;
+    padding: 5px 150px;
     background-color: white;
-    height: 30px;
+    height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

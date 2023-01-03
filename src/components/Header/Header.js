@@ -45,9 +45,9 @@ export default Header;
 
 function Button(props) {
   return (
-    <button className='Button'>
+    <button className='button_header'>
       {props.icon}
-      <h2>{props.title}</h2>
+      <h2 style={{fontSize:"14px",alignSelf:"center"}}>{props.title}</h2>
     </button>
   )
 }

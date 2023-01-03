@@ -29,6 +29,7 @@ function App() {
 
 
 
+  return <LoginPage/>;
   return (
     <BrowserRouter>
       <div className="app" >

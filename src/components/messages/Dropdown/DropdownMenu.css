@@ -1,4 +1,4 @@
-.dropdown {
+.dropdown_messages {
   position: absolute;
   top: 58px;
   width: 300px;
@@ -47,7 +47,7 @@
 
 
 @media (max-width:480px) {
-  .dropdown {
+  .dropdown_messages {
     position: absolute;
     align-self: center;
     top: 120px;
@@ -60,7 +60,7 @@
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 10px 10px 100px #D0D0D0;
-    height: 60%;
+    max-height: 60%;
     margin-top: 38px;
     margin-right: 0px;
     margin-left: 0px;

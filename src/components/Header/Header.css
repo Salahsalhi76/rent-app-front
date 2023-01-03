@@ -27,7 +27,7 @@
     background-color: #E8E8E8;
 }
 
-.Button{
+.button_header{
     border: none;
     color: grey;
     background-color: transparent;
@@ -39,7 +39,7 @@
     justify-items: center;
     }
 
-    .Button:hover{
+    .button_header:hover{
     color: green;
     }
     
