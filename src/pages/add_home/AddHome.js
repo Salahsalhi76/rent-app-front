@@ -1,4 +1,4 @@
-import  { forwardRef, useState } from 'react';
+import { forwardRef, useState } from 'react';
 import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -6,7 +6,8 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdHomeWork } from "react-icons/md";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-
+import { initializeApp } from "firebase/app";
+import { ref, uploadBytesResumable, getStorage } from "firebase/storage"
 
 import './AddHome.css';
 import SearchDropDown from '../../components/Boddy/searchBar/shared/searchdropdown';
@@ -19,11 +20,58 @@ const Transition = forwardRef(function Transition(props, ref) {
 
 export default function AddHomeDialog() {
     const [baladiyat, setBaladiyat] = useState([]);
-    let navigate = useNavigate(); 
+    const [images, setImages] = useState([]);
 
-    const handleClose = ()=>{
+
+    let navigate = useNavigate();
+
+    const handleClose = () => {
         navigate(-1);
     }
+    console.log(images);
+
+    const addImagesHandler = (data) => {
+        if (data.target.files.length == 0) return;
+
+        setImages([...images, ...data.target.files]);
+    }
+
+    const app = initializeApp({
+        apiKey: "AIzaSyBkwCab_ZvxVN3nlMaQ8_GCG9nJelBywwU",
+        authDomain: "homeapp-beca5.firebaseapp.com",
+        projectId: "homeapp-beca5",
+        storageBucket: "homeapp-beca5.appspot.com",
+        messagingSenderId: "646593078117",
+        appId: "1:646593078117:web:2a4ca4e16620e230f1b78c",
+        measurementId: "G-FN7VQ6Z1CS"
+    });
+
+
+    const storage = getStorage(app);
+
+
+
+    const uploadImages = () => {
+        if (images.length == 0) {
+            alert("Please choose at least one image")
+        }
+
+        const fd = new FormData();
+        images.forEach(file => {
+            fd.append("image", file, file.name);
+
+            const storageRef = ref(storage, `/files/${file.name}`)
+            uploadBytesResumable(storageRef, file).then(
+                res => {
+                    console.log(`uploadTask => ${res.ref}`);
+                }
+            );
+
+        });
+    }
+
+
+
 
 
     const types = ["Terrain", "Terrain Agricole", "Appartement", "Maison", "Bungalow"];
@@ -37,11 +85,11 @@ export default function AddHomeDialog() {
             TransitionComponent={Transition}>
 
             <div style={{ backgroundColor: "white" }}>
-                <CustomAppBar onClose={handleClose} />
+                <CustomAppBar onClose={handleClose} onShare={uploadImages} />
                 <div className='add_home_content'>
 
                     <div style={{ display: "flex", alignItems: "center", margin: "15px 0px" }}>
-                        <MdHomeWork style={{ fontSize: "22px", color: '#006169' }}   />
+                        <MdHomeWork style={{ fontSize: "22px", color: '#006169' }} />
                         <h3 style={{ fontSize: "15px", marginLeft: "10px" }}>Caractéristique de l'annonce</h3>
                     </div>
 
@@ -88,7 +136,7 @@ export default function AddHomeDialog() {
 
 
                     <div style={{ display: "flex", alignItems: "center", margin: "15px 0px" }}>
-                        <FaMapMarkerAlt style={{ fontSize: "22px", color: '#006169' }}  />
+                        <FaMapMarkerAlt style={{ fontSize: "22px", color: '#006169' }} />
                         <h3 style={{ fontSize: "15px", marginLeft: "10px" }}>Adresse du bien * (obligatoire)</h3>
                     </div>
 
@@ -118,7 +166,7 @@ export default function AddHomeDialog() {
 
 
                     <div style={{ display: "flex", alignItems: "center", margin: "15px 0px" }}>
-                        <BsFillPersonLinesFill style={{ fontSize: "22px", color: '#006169' }}  />
+                        <BsFillPersonLinesFill style={{ fontSize: "22px", color: '#006169' }} />
                         <h3 style={{ fontSize: "15px", marginLeft: "10px" }}>Les informations de contact</h3>
                     </div>
 
@@ -144,10 +192,23 @@ export default function AddHomeDialog() {
 
                     </div>
 
+                    <div style={{ alignContent: 'center', alignItems: "center", display: "flex", flexDirection: "column" }}>
+
+                        <label htmlFor='images' style={{ alignSelf: "center" }} >
+
+                            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkM7QjszfubHVImY9uGz-lU3R33kH2Dh2gkg&usqp=CAU' />
+
+                        </label>
+
+                        <input onChange={addImagesHandler} type="file" multiple accept='.jpg,.png,.svg,.jpeg' id='images' style={{ display: "none" }} />
+
+
+                        {images.length != 0 && <ImagesWidget images={images} />}
+                    </div>
+
                 </div>
 
             </div>
-
 
         </Dialog>
     );
@@ -157,12 +218,12 @@ export default function AddHomeDialog() {
 const CustomAppBar = (props) => {
     return <div className='addhome_appbar'>
         <div style={{ display: "flex", alignItems: "center" }}>
-            <AiOutlineArrowLeft style={{ fontWeight: "bold", fontSize: "20px" }}  onClick={props.onClose} />
+            <AiOutlineArrowLeft style={{ fontWeight: "bold", fontSize: "20px" }} onClick={props.onClose} />
             <h2>Créer une annonce</h2>
         </div>
 
 
-        <button >Share</button>
+        <button onClick={props.onShare}>Share</button>
     </div>
 }
 
@@ -188,3 +249,18 @@ function CustomDropDown(props) {
         </select >
     );
 }
+
+
+const ImagesWidget = (props) => {
+    return <div className='display-images'>
+        { props.images.map((img,index) => {  return  <img key={index} src={img.file} /> })}
+    </div>
+}
+
+
+
+
+
+
+
+
