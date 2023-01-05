@@ -1,4 +1,4 @@
-import { forwardRef, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -56,7 +56,10 @@ export default function AddHomeDialog() {
         setImages([...images, ...data.target.files]);
     }
 
-    const app = initializeApp({
+    let app;
+    let storage;
+   useEffect(()=>{
+     app = initializeApp({
         apiKey: "AIzaSyBkwCab_ZvxVN3nlMaQ8_GCG9nJelBywwU",
         authDomain: "homeapp-beca5.firebaseapp.com",
         projectId: "homeapp-beca5",
@@ -67,7 +70,8 @@ export default function AddHomeDialog() {
     });
 
 
-    const storage = getStorage(app);
+     storage = getStorage(app);
+   });
 
 
 

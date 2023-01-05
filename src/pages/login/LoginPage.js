@@ -1,4 +1,6 @@
- 
+import { useEffect, useState } from 'react';
+import { GoogleLogin } from 'react-google-login';
+import { gapi } from 'gapi-script';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
@@ -15,8 +17,47 @@ import {
     from 'mdb-react-ui-kit';
 
 function LoginPage() {
+    const [user, setUser] = useState({});
+    const clientId = "701297576119-3v2p4bf25tevk283ejpl1le48lctlo63.apps.googleusercontent.com";
+    const google = window.google;
 
- 
+    useEffect(() => {
+        const initClient = () => {
+            gapi.client.init({
+                clientId: clientId,
+                scope: ''
+            });
+        };
+        gapi.load('client:auth2', initClient);
+    });
+
+    useEffect(() => {
+
+        google.accounts.id.renderButton(
+            document.getElementById("signInDiv"),
+            { theme: "outline", size: "medium" }
+        )
+        /*google.accounts.id.prompt();*/
+    }, []);
+
+
+    const onSuccess = (res) => {
+        console.log('success:', res);
+    };
+    const onFailure = (err) => {
+        console.log('failed:', err);
+    };
+    return (
+       <GoogleLogin
+          clientId={clientId}
+          buttonText="Sign in with Google"
+          onSuccess={onSuccess}
+          onFailure={onFailure}
+          cookiePolicy={'single_host_origin'}
+          isSignedIn={true}
+      />
+  );
+
     return (
         <MDBContainer className="my-5" >
 
