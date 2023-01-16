@@ -9,6 +9,7 @@ import ChatPopUp from './chat/chat-popup.js';
 import { useState,useEffect } from "react";
 import getHomes from "./fonctions/functions.js";
 import LoginPage from "./pages/login/LoginPage.js";
+import LuhnAlgorithme from "./fonctions/luhn_algorithme.js";
 
 function App() {
 
@@ -31,6 +32,9 @@ function App() {
 
  // return <LoginPage/>;
   
+
+ console.log(`LuhnAlgorithme.generate() ${LuhnAlgorithme.generate()}`);
+
   return (
     <BrowserRouter>
       <div className="app" >
