@@ -29,10 +29,8 @@ function Header() {
 
 
       </div>
-      <div className='divider' />
-      <SettingsBar />
 
-    </div>
+       </div>
 
     </>
 

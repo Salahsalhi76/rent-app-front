@@ -6,34 +6,6 @@ import "./homes_grid.css";
 function HomesGrid(props) {
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     const t = {
         price: "546",
         adresse: "Rimal 1, Rimal, Jumeirah Beach Residence (JBR), Dubai",

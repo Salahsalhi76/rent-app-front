@@ -1,5 +1,5 @@
 .settings_bar {
-    padding: 5px 150px;
+    padding: 5px 0px;
     background-color: white;
     height: 40px;
     display: flex;
@@ -67,7 +67,7 @@
 
 @media (max-width: 480px) {
     .settings_bar {
-        padding: 10px 10px;
+        padding: 10px 0px;
         background-color: white;
         display: block;
         flex-direction: row;

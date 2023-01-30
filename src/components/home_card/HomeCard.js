@@ -6,14 +6,15 @@ import "./HomeCard.css";
 
 
 function HomeCard(props) {
+
     let navigate = useNavigate(); 
-    const routeChange = () =>{ 
-        let path = "/home"; 
+    const routeChange = (id) =>{ 
+        let path = `/home/${id}`; 
         navigate(path);
       }
 
     return (
-        <button  onClick={routeChange} style={{backgroundColor:'transparent',border:"none"}} alt="dsgsdgg">
+        <button  onClick={()=>routeChange(props.type)} style={{backgroundColor:'transparent',border:"none"}} alt="dsgsdgg">
               <div className='homecard'>
             <img src={props.image} />
             <div className='content'>

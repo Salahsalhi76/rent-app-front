@@ -5,13 +5,36 @@ import { BiMap, BiBuildingHouse } from 'react-icons/bi';
 import { RxRulerSquare } from 'react-icons/rx';
 import { IoIosArrowForward } from 'react-icons/io';
 import ImageGallery from 'react-image-gallery';
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 import "./homeScreen.css";
+import { useEffect } from 'react';
+import { isAuthenticated_controller } from '../../controllers/auth_controller';
+import { useState } from 'react';
 
 
 function HomeScreen(props) {
+
+
+  
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+
+  useEffect(() => {
+        if(isAuthenticated_controller()){
+          setIsAuthenticated(true);
+        }
+    }, []);
+
+    
+  if (!isAuthenticated) {
+    return <Navigate to="/login" />;
+  }
+
+
+
+
+
   return (
     <>
       <div className='homescreen'>

@@ -2,13 +2,17 @@ import HomesGrid from './homes_grid.js';
 import { MdOutlineVilla } from 'react-icons/md';
 import SearchBar from './searchBar/searchBar';
 import DropDownSalah from '../shared/dropdown';
-import { useNavigate, Outlet } from "react-router-dom";
+import { useNavigate, Outlet ,Navigate} from "react-router-dom";
 import LoadingWidget from '../loading/loading.js';
 import './body.css';
+import SettingsBar from './settinhBar/settingBar.js';
+import { isAuthenticated_controller } from '../../controllers/auth_controller.js';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 function Body(props) {
-    console.log(`body props.homes=> ${props.homes}`);
+
     const options = [
         'Popular', 'Newest', 'Old'
     ];
@@ -16,17 +20,33 @@ function Body(props) {
     const value = options[0];
 
 
+
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    useEffect(() => {
+          if(isAuthenticated_controller()){
+            setIsAuthenticated(true);
+          }
+      }, []);
+
+      
+    if (!isAuthenticated) {
+      return <Navigate to="/login" />;
+    }
+
+    
+
     return (
         <>
             <div className='body'>
+                <SettingsBar />
                 <SearchBar />
-
                 <div className='divider' />
 
 
                 <div className='body_content'>
 
-                    
+
                     <div className='homes_body'>
                         <div className='body_header'>
                             <h1>Properties for rent in Algeria</h1>
@@ -35,9 +55,9 @@ function Body(props) {
                                 <DropDownSalah items={options} value={value} defaultValue={defaultOption} />
                             </div>
                         </div>
-                        
-                        { props.loading && <LoadingWidget/>}
-                        <HomesGrid homes={props.homes} />
+
+                        {props.loading && <LoadingWidget />}
+                        {!props.loading && <HomesGrid homes={props.homes} />}
 
 
 
@@ -46,9 +66,9 @@ function Body(props) {
                     <RightSpace />
                 </div>
 
+                <Outlet />
             </div>
 
-            <Outlet />
         </>
 
     )

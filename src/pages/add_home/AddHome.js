@@ -6,7 +6,7 @@ import { TiDeleteOutline } from "react-icons/ti";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdHomeWork } from "react-icons/md";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,Navigate} from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import { ref, uploadBytesResumable, getDownloadURL, getStorage } from "firebase/storage"
 
@@ -15,15 +15,17 @@ import SearchDropDown from '../../components/Boddy/searchBar/shared/searchdropdo
 import SearchDropDownCommunes from '../../components/Boddy/searchBar/shared/searchDropDownCommunes';
 import { wilayas, communes } from '../../components/Boddy/searchBar/searchBar.js'
 import { borderRadius } from '@mui/system';
+import { isAuthenticated_controller } from '../../controllers/auth_controller';
 
 const Transition = forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function AddHomeDialog() {
+    let navigate = useNavigate();
+
     const [baladiyat, setBaladiyat] = useState([]);
     const [images, setImages] = useState([]);
-
     const [title, setTitle] = useState("");
     const [description, setDiscription] = useState("");
     const [categorie, setCategorie] = useState("");
@@ -41,9 +43,31 @@ export default function AddHomeDialog() {
 
 
 
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
 
-    let navigate = useNavigate();
+    useEffect(() => {
+        if (isAuthenticated_controller()) {
+            setIsAuthenticated(true);
+        }else{
+            app = initializeApp({
+                apiKey: "AIzaSyBkwCab_ZvxVN3nlMaQ8_GCG9nJelBywwU",
+                authDomain: "homeapp-beca5.firebaseapp.com",
+                projectId: "homeapp-beca5",
+                storageBucket: "homeapp-beca5.appspot.com",
+                messagingSenderId: "646593078117",
+                appId: "1:646593078117:web:2a4ca4e16620e230f1b78c",
+                measurementId: "G-FN7VQ6Z1CS"
+            });
+    
+            storage = getStorage(app);
+        }
+    }, []);
+
+
+    if (!isAuthenticated) {
+        return <Navigate to="/login" />;
+    }
 
     const handleClose = () => {
         navigate(-1);
@@ -58,21 +82,7 @@ export default function AddHomeDialog() {
 
     let app;
     let storage;
-   useEffect(()=>{
-     app = initializeApp({
-        apiKey: "AIzaSyBkwCab_ZvxVN3nlMaQ8_GCG9nJelBywwU",
-        authDomain: "homeapp-beca5.firebaseapp.com",
-        projectId: "homeapp-beca5",
-        storageBucket: "homeapp-beca5.appspot.com",
-        messagingSenderId: "646593078117",
-        appId: "1:646593078117:web:2a4ca4e16620e230f1b78c",
-        measurementId: "G-FN7VQ6Z1CS"
-    });
-
-
-     storage = getStorage(app);
-   });
-
+ 
 
 
     const uploadImages = () => {

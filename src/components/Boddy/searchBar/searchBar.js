@@ -72,19 +72,8 @@ function SearchBar() {
       </div>
 
 
-      <div className='baths_beds'>
-        <h2>Baths</h2>
-        <input type='number' onChange={(event) => {
-          setBaths(event.target.value);
-        }} />
-      </div>
+     
 
-      <div className='baths_beds'>
-        <h2>Beds</h2>
-        <input type="number" onChange={(event) => {
-          setBeds(event.target.value);
-        }} />
-      </div>
 
       <button onClick={search}>Search</button>
 
