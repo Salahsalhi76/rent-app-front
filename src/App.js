@@ -13,7 +13,6 @@ import LoginWithGoogle from "./pages/login copy/LoginPage.js";
 function App() {
 
   let [open, setOpen] = useState(false);
-  let [authenticated, setAuthenticated] = useState(false);
   let [homes, setHomes] = useState([]);
   let [loading, setLoading] = useState(false); 
 
@@ -39,10 +38,8 @@ function App() {
 
         <Routes >
 
-          <Route path="/login" element={<LoginWithGoogle onLogin={()=>{
-            setAuthenticated(true);
-            console.log("fdggggggggggggggggggggggg");
-          }}/>} />
+          <Route path="/login" element={<LoginWithGoogle />} />
+
 
 
              <Route path="/" element={<Body homes={homes} loading={loading} />}>
