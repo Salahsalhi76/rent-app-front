@@ -18,16 +18,9 @@ function HomeScreen(props) {
 
 
   
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+ 
 
-  useEffect(() => {
-        if(isAuthenticated_controller()){
-          setIsAuthenticated(true);
-        }
-    }, []);
-
-    
-  if (!isAuthenticated) {
+  if (!isAuthenticated_controller()) {
     return <Navigate to="/login" />;
   }
 

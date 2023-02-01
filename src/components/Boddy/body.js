@@ -21,16 +21,10 @@ function Body(props) {
 
 
 
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-    useEffect(() => {
-          if(isAuthenticated_controller()){
-            setIsAuthenticated(true);
-          }
-      }, []);
+   
 
       
-    if (!isAuthenticated) {
+    if (!isAuthenticated_controller()) {
       return <Navigate to="/login" />;
     }
 
@@ -48,12 +42,9 @@ function Body(props) {
 
 
                     <div className='homes_body'>
-                        <div className='body_header'>
+                        <div className='body_header' style={{margin:'25px'}}>
                             <h1>Properties for rent in Algeria</h1>
-                            <div className='order_by_container'>
-                                <h1>Order by</h1>
-                                <DropDownSalah items={options} value={value} defaultValue={defaultOption} />
-                            </div>
+                            
                         </div>
 
                         {props.loading && <LoadingWidget />}
@@ -74,9 +65,9 @@ function Body(props) {
     )
 }
 
-export default Body
 
-const RightSpace = (props) => {
+
+export const RightSpace = (props) => {
     let navigate = useNavigate();
 
     return (
@@ -95,3 +86,6 @@ const RightSpace = (props) => {
     );
 }
 
+
+
+export default Body

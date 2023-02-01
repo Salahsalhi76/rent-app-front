@@ -43,7 +43,7 @@ export default function AddHomeDialog() {
 
 
 
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(true);
 
 
     useEffect(() => {

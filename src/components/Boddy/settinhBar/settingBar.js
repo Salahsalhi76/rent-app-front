@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from 'react-router-dom';
-import { useNavigate,useLocation  } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import './settingBar.css';
 
 function SettingsBar() {
@@ -18,9 +18,9 @@ function SettingsBar() {
 
             <div className='settings_bar_content'>
                 <button onClick={() => {
-                    
+
                     const tmp = location.pathname;
-                    const path = (tmp==="/" || tmp==="/messages")? "/" : "/home/";
+                    const path = (tmp === "/" || tmp === "/messages") ? "/" : "/home/";
 
                     if (open) {
                         navigate(path);
@@ -29,9 +29,11 @@ function SettingsBar() {
                     }
                     setOpen(!open);
                 }}>My messages</button>
-                <button>My offers</button>
-                <button>Top 10 offers</button>
-                <button>Most viewed</button>
+                <button 
+                onClick={()=>{
+                    navigate("/my_offers")
+                }}
+                >My offers</button>
             </div>
         </div>
     )

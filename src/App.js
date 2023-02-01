@@ -9,13 +9,15 @@ import { useState, useEffect } from "react";
 import { getHomes } from "./controllers/homes_controller.js";
 
 import LoginWithGoogle from "./pages/login copy/LoginPage.js";
+import { isAuthenticated_controller } from "./controllers/auth_controller.js";
+import MyOffers from "./components/MyOffers/my_offers.js";
 
 function App() {
 
   let [open, setOpen] = useState(false);
   let [homes, setHomes] = useState([]);
   let [loading, setLoading] = useState(false); 
-
+  let [authChanges, setAuthChanges] = useState(false); 
 
   useEffect(() => {
     getHomes().then(data => {
@@ -24,7 +26,7 @@ function App() {
       setLoading(false);
     });
 
-  }, []);
+  }, [authChanges]);
 
 
 
@@ -34,19 +36,22 @@ function App() {
     <BrowserRouter>
       <div className="app" >
 
-        <Header />
+        { isAuthenticated_controller() && <Header onLogOut={()=>{setAuthChanges(!authChanges)}}/>}
 
         <Routes >
 
-          <Route path="/login" element={<LoginWithGoogle />} />
+          <Route path="/login" element={<LoginWithGoogle onLogin={()=>{setAuthChanges(!authChanges);console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")}}/>} />
 
 
 
              <Route path="/" element={<Body homes={homes} loading={loading} />}>
 
+
               <Route path="/messages" element={<MessagesDialog onClick={() => { setOpen(true); }} />} />
 
             </Route>
+
+            <Route path="/my_offers" element={<MyOffers />} />
 
             <Route path="/addHome" element={<AddHomeDialog />} />
 
