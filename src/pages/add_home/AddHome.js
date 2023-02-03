@@ -16,6 +16,7 @@ import SearchDropDownCommunes from '../../components/Boddy/searchBar/shared/sear
 import { wilayas, communes } from '../../components/Boddy/searchBar/searchBar.js'
 import { borderRadius } from '@mui/system';
 import { isAuthenticated_controller } from '../../controllers/auth_controller';
+import { AddHomeController } from '../../controllers/add_home_controller';
 
 const Transition = forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -128,6 +129,8 @@ export default function AddHomeDialog() {
         console.log(email);
         console.log(phone);
         console.log(price);
+
+        AddHomeController();
     }
 
 

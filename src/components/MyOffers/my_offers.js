@@ -12,7 +12,7 @@ import DropDownSalah from '../shared/dropdown';
 
 export default function MyOffers(props) {
 
-    let [loading, setLoading] = useState(false); 
+    let [loading, setLoading] = useState(false);
     let [homes, setHomes] = useState([]);
   
     useEffect(() => {

@@ -11,6 +11,7 @@ import { getHomes } from "./controllers/homes_controller.js";
 import LoginWithGoogle from "./pages/login copy/LoginPage.js";
 import { isAuthenticated_controller } from "./controllers/auth_controller.js";
 import MyOffers from "./components/MyOffers/my_offers.js";
+import { AddHomeController } from "./controllers/add_home_controller.js";
 
 function App() {
 
@@ -20,11 +21,14 @@ function App() {
   let [authChanges, setAuthChanges] = useState(false); 
 
   useEffect(() => {
+    AddHomeController();
+
+   /*
     getHomes().then(data => {
-      console.log(data);
       setHomes(data);
       setLoading(false);
     });
+   */
 
   }, [authChanges]);
 
