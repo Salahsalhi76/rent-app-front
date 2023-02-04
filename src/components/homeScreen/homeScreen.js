@@ -128,16 +128,7 @@ const UserInfo = (props) => {
           <h2>Listing by</h2>
           <h2 style={{ color: '#006169', fontWeight: '550' }}>Salah eddine salhi</h2>
 
-          <div style={{ display: "flex", flexDirection: "row", marginTop: '5px' }}>
-            <BiBuildingHouse style={{ fontSize: "18px", selfAlign: "center", marginRight: "5px" }} />
-            <h2 style={{ fontSize: "14px", alignSelf: "center", fontWeight: '550' }}>10</h2>
-            <h2 style={{ fontSize: "12px", alignSelf: "center" }}>Listing</h2>
-            <h2>.</h2>
-            <button>
-              <h2>View all</h2>
-              <IoIosArrowForward />
-            </button>
-          </div>
+      
 
         </div>
 

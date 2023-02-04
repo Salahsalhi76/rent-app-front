@@ -6,7 +6,7 @@ import { TiDeleteOutline } from "react-icons/ti";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdHomeWork } from "react-icons/md";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import { useNavigate ,Navigate} from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import { ref, uploadBytesResumable, getDownloadURL, getStorage } from "firebase/storage"
 
@@ -31,7 +31,6 @@ export default function AddHomeDialog() {
     const [description, setDiscription] = useState("");
     const [categorie, setCategorie] = useState("");
     const [type, setType] = useState("");
-    const [lit_nb, setLitsnb] = useState();
     const [bed_nb, setBednb] = useState();
     const [Surface, setSurface] = useState();
     const [wilaya, setWilaya] = useState();
@@ -45,12 +44,13 @@ export default function AddHomeDialog() {
 
 
     const [isAuthenticated, setIsAuthenticated] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
 
 
     useEffect(() => {
         if (isAuthenticated_controller()) {
             setIsAuthenticated(true);
-        }else{
+        } else {
             app = initializeApp({
                 apiKey: "AIzaSyBkwCab_ZvxVN3nlMaQ8_GCG9nJelBywwU",
                 authDomain: "homeapp-beca5.firebaseapp.com",
@@ -60,7 +60,7 @@ export default function AddHomeDialog() {
                 appId: "1:646593078117:web:2a4ca4e16620e230f1b78c",
                 measurementId: "G-FN7VQ6Z1CS"
             });
-    
+
             storage = getStorage(app);
         }
     }, []);
@@ -83,7 +83,7 @@ export default function AddHomeDialog() {
 
     let app;
     let storage;
- 
+
 
 
     const uploadImages = () => {
@@ -115,28 +115,57 @@ export default function AddHomeDialog() {
 
 
     const ShareHome = () => {
-        console.log(title);
-        console.log(description);
-        console.log(categorie);
-        console.log(type);
-        console.log(lit_nb);
-        console.log(bed_nb);
-        console.log(Surface);
-        console.log(wilaya);
-        console.log(baladiya);
-        console.log(name);
-        console.log(adresse);
-        console.log(email);
-        console.log(phone);
-        console.log(price);
 
-        AddHomeController();
+        console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+        /*
+     <div style={{ display: "flex", "flexDirection": "column", width: "100%", marginRight: '10px' }}>
+                            <h2>Lits</h2>
+                            <input type='number' onChange={value => {
+                                setLitsnb(value.target.value);
+                            }} />
+                        </div>
+        */
+
+
+        AddHomeController(
+            name,
+            adresse,
+            email,
+            phone,
+            baladiya,
+            wilaya,
+            type,
+            categorie,
+            Surface,
+            bed_nb,
+            title,
+            description,
+            price
+        ).then(data => {
+            console.log("data => " + JSON.stringify(data, null, 2));
+            showNotification();
+        }).catch(error => {
+            console.log("errorerrorerrorerror");
+        });
+
     }
 
 
 
     const types = ["Terrain", "Terrain Agricole", "Appartement", "Maison", "Bungalow"];
     const categories = ["Vente", "Echange", "Location", "Location pour vacances"];
+
+
+
+
+
+    const showNotification = () => {
+        setIsVisible(true);
+        setTimeout(() => handleClose(), 500);
+    };
+
+
+
 
     return (
         <Dialog
@@ -182,12 +211,7 @@ export default function AddHomeDialog() {
 
                         </div>
 
-                        <div style={{ display: "flex", "flexDirection": "column", width: "100%", marginRight: '10px' }}>
-                            <h2>Lits</h2>
-                            <input type='number' onChange={value => {
-                                setLitsnb(value.target.value);
-                            }} />
-                        </div>
+
 
                         <div style={{ display: "flex", "flexDirection": "column", width: "100%", marginRight: '10px' }}>
                             <h2>Beds</h2>
@@ -307,11 +331,21 @@ export default function AddHomeDialog() {
 
                             setImages(result);
                         }} />}
+
+
+                     
+
                     </div>
 
                 </div>
 
             </div>
+
+            {isVisible && (
+                <div className="notification">
+                    <p className="notification-message">Home published successfully</p>
+                </div>
+            )}
 
         </Dialog>
     );
@@ -325,8 +359,8 @@ const CustomAppBar = (props) => {
             <h2>Créer une annonce</h2>
         </div>
 
-
         <button onClick={props.onShare}>Share</button>
+
     </div>
 }
 
