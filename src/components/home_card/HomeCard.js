@@ -9,7 +9,7 @@ function HomeCard(props) {
 
     let navigate = useNavigate(); 
     const routeChange = (id) =>{ 
-        let path = `/home/${id}`; 
+        let path = `/home/kdfFDF-dfdfdfsd-sdfushfklj-sdfsdfsdf`; 
         navigate(path);
       }
 

@@ -30,6 +30,6 @@ export  function isAuthenticated_controller(){
 
 
 export function getMe(){
-  return {name:"salah eddine",image:"https://avatars.githubusercontent.com/u/89273323?v=4"};
+  return {name:"salah eddine",image:"https://cdn-icons-png.flaticon.com/512/149/149071.png"};
 }
 

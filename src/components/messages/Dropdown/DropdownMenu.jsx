@@ -51,13 +51,12 @@ mounted to DOM
     <div className="dropdown_messages"  >
 
       <div className="menu" style={{ "overflow-y": "scroll", maxHeight: "100%", height: "100%" }}>
-        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
-        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
-        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
-        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
-        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
-        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
-        <DropdownItem onClick={props.onClick}>Salah eddine</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Salah eddine salhi</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Mohammmed ali</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Abdelkarim yahia</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Aissa lakmi</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Rabie</DropdownItem>
+        <DropdownItem onClick={props.onClick}>Karim betela</DropdownItem>
      
       </div>
 

@@ -116,7 +116,6 @@ export default function AddHomeDialog() {
 
     const ShareHome = () => {
 
-        console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
         /*
      <div style={{ display: "flex", "flexDirection": "column", width: "100%", marginRight: '10px' }}>
                             <h2>Lits</h2>
@@ -127,6 +126,9 @@ export default function AddHomeDialog() {
         */
 
 
+                        showNotification();
+
+                        return;
         AddHomeController(
             name,
             adresse,
